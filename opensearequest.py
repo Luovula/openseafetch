@@ -7,14 +7,19 @@ def get_number_of_owners(asset_contract_address, token_id, api_key):
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         data = response.json()
-        unique_usernames = set()
+        print(data)
+        total_mints = 0  # Initialize a variable to store the total mints count
+
         for owner_info in data['owners']:
-            username = owner_info['owner']['user']['username']
-            if username:
-                unique_usernames.add(username)
-        print(f"Usernames for token ID {token_id}: {unique_usernames}")
-        print(f"Number of unique usernames for token ID {token_id}: {len(unique_usernames)}")
-        return len(unique_usernames)
+            quantity = int(owner_info['quantity'])  # Extract the quantity and convert it to an integer
+            total_mint += quantity  # Increment the total mints count by the quantity
+
+            # Now, total_mints will contain the total number of mints
+        print(total_mints)
+
+        print(f"mints for token ID {token_id}: {total_mints}")
+        print(f"Number of mints for token ID {token_id}: {(total_mints)}")
+        return total_mints
     else:
         print(f"Error fetching data: {response.status_code}")
         return 0
