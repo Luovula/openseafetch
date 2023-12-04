@@ -33,7 +33,7 @@ def get_number_of_owners(asset_contract_address, token_id, api_key):
 @app.route('/get_nft_data')
 def get_nft_data():
     # Example data fetching
-    api_key = '04f1d6917de349caa2d1236eed4df99b'
+    api_key = os.environ.get('API_KEY')
     contract_address = "0xae2bc979178e97e0688384aab00055e67bea91ed"
     owner_counts = [get_number_of_owners(contract_address, token_id, api_key) for token_id in [1, 2, 3, 4, 5]]
     return jsonify(owner_counts)

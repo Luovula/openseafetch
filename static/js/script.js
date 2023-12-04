@@ -1,5 +1,5 @@
 function updateCounters() {
-    fetch('http://127.0.0.1:5000/get_nft_data')
+    fetch('https://dry-plains-13766-d22087ffb2f5.herokuapp.com/get_nft_data')
         .then(response => response.json())
         .then(data => {
             // Assuming 'data' is an array of owner counts
