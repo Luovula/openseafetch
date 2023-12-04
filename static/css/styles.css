@@ -1,5 +1,19 @@
+html, body {
+    overflow: hidden;
+    /* Other styles */
+}
+
+#pageTitle {
+    font-family: 'Arial', sans-serif;
+    color: #b17ed8;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+    /* Add more styling as needed */
+}
+
 body {
-    background-image: url('/static/images/sansound');
+    background-image: url('/static/images/sansound.jpg');
     background-size: contain; /* Change from 'cover' to 'contain' */
     background-position: center center;
     background-repeat: no-repeat;
@@ -15,7 +29,7 @@ body {
     display: flex;
     justify-content: space-around; /* Spread out boxes */
     margin-bottom: 20px;
-    margin-top: 230px; /* Lower the entire counter div */
+    margin-top: 160px; /* Lower the entire counter div */
 }
 
 .counter {
